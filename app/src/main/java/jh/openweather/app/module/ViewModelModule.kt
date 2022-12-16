@@ -12,13 +12,8 @@ import org.koin.core.module.Module
 import org.koin.dsl.module
 
 // Koin 모듈
-val mainModule : Module = module {
+val viewModelModule : Module = module {
 
-    single { ApiInstance }
-
-    single<WeatherRemoteRepository> { WeatherRemoteRepositoryImpl(get())}
-    single<WeatherRemoteDataSource> { WeatherDataSourceImpl(get()) }
-
-    factory { GetWeatherUseCase(get()) }
+    viewModel { MainViewModel(get()) }
 
 }

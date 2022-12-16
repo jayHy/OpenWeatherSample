@@ -12,6 +12,7 @@ object ApiInstance {
     private var okHttpClient: OkHttpClient
 
     private const val BASE_URL = "https://api.openweathermap.org"
+    const val APP_ID = "4f2f26a2aa33114ef14cf3720d00255a"
 
     init {
         val logging = HttpLoggingInterceptor()

@@ -59,6 +59,13 @@ dependencies {
     // DI (koin)
     implementation "io.insert-koin:koin-core:$koin_version"
     implementation "io.insert-koin:koin-android:$koin_version"
+    implementation project(path: ':domain')
+
+    testImplementation "io.insert-koin:koin-test:$koin_version"
+    // Koin for JUnit 4
+    testImplementation "io.insert-koin:koin-test-junit4:$koin_version"
+//    // Koin for JUnit 5
+//    testImplementation "io.insert-koin:koin-test-junit5:$koin_version"
 
     // Life Cycle (ViewModel, LiveData)
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
@@ -67,6 +74,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
 
     implementation 'androidx.databinding:databinding-runtime:7.3.1'
+    implementation project(path: ':data')
 
     // Annotation processor
     //noinspection LifecycleAnnotationProcessorWithJava8
@@ -82,10 +90,21 @@ dependencies {
     // Timber
     implementation "com.jakewharton.timber:timber:$timber_version"
 
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+
     // Test
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+
+    // test
+    androidTestImplementation("org.mockito:mockito-android:2.25.0")
+    testImplementation 'org.mockito:mockito-inline:2.21.0'
+
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
+
+//    runtimeOnly 'org.jetbrains.kotlinx:kotlinx-datetime:0.4.0'
+
 }
 
 //apply plugin: 'com.google.gms.google-services'

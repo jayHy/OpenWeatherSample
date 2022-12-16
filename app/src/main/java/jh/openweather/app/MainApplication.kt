@@ -2,11 +2,11 @@ package jh.openweather.app
 
 import android.app.Application
 import jh.openweather.app.module.mainModule
+import jh.openweather.app.module.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 import org.koin.core.logger.Level
-import org.koin.dsl.module
 import timber.log.Timber
 
 class MainApplication : Application() {
@@ -19,10 +19,9 @@ class MainApplication : Application() {
         startKoin {
             androidLogger(Level.ERROR)
             androidContext(this@MainApplication)
-            module { mainModule }
-//            modules(
-//                mainModule,
-//            )
+            modules(
+                mainModule, viewModelModule
+            )
         }
     }
 }
