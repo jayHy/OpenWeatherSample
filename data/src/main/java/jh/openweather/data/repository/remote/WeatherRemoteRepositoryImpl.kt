@@ -6,8 +6,8 @@ import jh.openweather.domain.model.Weather
 import jh.openweather.domain.repository.WeatherRemoteRepository
 
 class WeatherRemoteRepositoryImpl(private val dataSource: WeatherRemoteDataSource) : WeatherRemoteRepository {
-    override suspend fun currentWeatherData() : Weather {
-        val response = dataSource.currentWeatherData()
+    override suspend fun currentWeatherData(lat : Double, lon : Double) : Weather {
+        val response = dataSource.currentWeatherData(lat = lat, lon = lon)
         return Weather(
             temp = response.name
         )

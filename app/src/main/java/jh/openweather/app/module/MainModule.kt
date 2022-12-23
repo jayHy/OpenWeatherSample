@@ -1,5 +1,8 @@
 package jh.openweather.app.module
 
+import jh.openweather.app.DispatcherProvider
+import jh.openweather.app.DispatcherProviderImpl
+import jh.openweather.app.view.BaseViewModel
 import jh.openweather.app.view.main.MainViewModel
 import jh.openweather.data.api.ApiInstance
 import jh.openweather.data.datasource.remote.WeatherDataSourceImpl
@@ -20,5 +23,9 @@ val mainModule : Module = module {
     single<WeatherRemoteDataSource> { WeatherDataSourceImpl(get()) }
 
     factory { GetWeatherUseCase(get()) }
+
+    single<DispatcherProvider> { DispatcherProviderImpl() }
+
+
 
 }

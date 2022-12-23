@@ -7,6 +7,6 @@ import retrofit2.http.QueryMap
 interface WeatherService {
     @GET("weather")
     suspend fun currentWeatherData(
-        @QueryMap map: HashMap<String, String>,
+        @QueryMap map: HashMap<String, Any>,
     ) : WeatherResponse
 }

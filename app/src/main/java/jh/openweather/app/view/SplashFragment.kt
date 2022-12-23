@@ -47,6 +47,7 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>(R.layout.fragment_spl
         ) {
             // 권한 있음
             Timber.d("checkPermission success")
+            actionToMain()
         } else {
             var isPermission = true
             val requestMultiplePermissions = registerForActivityResult(
